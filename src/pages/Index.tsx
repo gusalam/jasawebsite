@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Scene from '@/components/three/Scene';
 import HeroOverlay from '@/components/HeroOverlay';
 import MeteorParticles from '@/components/MeteorParticles';
+import BackgroundMusic from '@/components/BackgroundMusic';
 import WhyNeedSection from '@/components/sections/WhyNeedSection';
 import WebsiteServiceSection from '@/components/sections/WebsiteServiceSection';
 import AppServiceSection from '@/components/sections/AppServiceSection';
@@ -30,6 +31,9 @@ const Index = () => {
 
   return (
     <main className="relative min-h-screen bg-background overflow-hidden">
+      {/* Background Music Player */}
+      <BackgroundMusic />
+      
       {/* Meteor shower background image with parallax */}
       <div 
         className="fixed inset-0 z-0 will-change-transform"
