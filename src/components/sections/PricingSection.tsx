@@ -1,4 +1,4 @@
-import { Check, Star, MessageCircle } from 'lucide-react';
+import { Star, MessageCircle } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const PricingSection = () => {
@@ -8,14 +8,6 @@ const PricingSection = () => {
       price: '150.000',
       period: 'sekali bayar',
       description: 'Cocok untuk promosi produk, personal branding, atau campaign marketing',
-      features: [
-        'Desain Modern & Responsif',
-        '1 Halaman Lengkap',
-        'Form Kontak WhatsApp',
-        'Optimasi SEO Dasar',
-        'Gratis Hosting Seumur Hidup',
-        'Revisi 2x',
-      ],
       popular: false,
       ctaText: 'Pesan Sekarang',
     },
@@ -24,16 +16,6 @@ const PricingSection = () => {
       price: '500.000',
       period: 'sekali bayar',
       description: 'Solusi lengkap untuk UMKM dengan katalog produk dan admin panel',
-      features: [
-        'Semua Fitur Landing Page',
-        'Multi Halaman (5-7 Halaman)',
-        'Katalog Produk Online',
-        'Admin Panel Mudah Dikelola',
-        'Integrasi WhatsApp Order',
-        'Gratis Domain .com (1 Tahun)',
-        'Gratis Hosting Seumur Hidup',
-        'Revisi Unlimited',
-      ],
       popular: true,
       ctaText: 'Pilihan Terbaik',
     },
@@ -42,16 +24,6 @@ const PricingSection = () => {
       price: '1.500.000',
       period: 'sekali bayar',
       description: 'Toko online lengkap dengan sistem pembayaran dan manajemen stok',
-      features: [
-        'Semua Fitur Website UMKM',
-        'Keranjang Belanja',
-        'Payment Gateway',
-        'Manajemen Stok Otomatis',
-        'Laporan Penjualan',
-        'Notifikasi Email & WhatsApp',
-        'Gratis SSL Certificate',
-        'Support Prioritas',
-      ],
       popular: false,
       ctaText: 'Konsultasi Gratis',
     },
@@ -107,7 +79,7 @@ const PricingSection = () => {
                   </div>
                 )}
                 
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 flex-grow">
                   <h3 className="text-xl font-bold font-display text-foreground mb-2">
                     {pkg.name}
                   </h3>
@@ -122,17 +94,6 @@ const PricingSection = () => {
                   </div>
                   <span className="text-muted-foreground text-sm">{pkg.period}</span>
                 </div>
-
-                <ul className="space-y-3 mb-6 flex-grow">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-success" />
-                      </div>
-                      <span className="text-foreground text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
 
                 <a
                   href="https://wa.me/6287862983339"
