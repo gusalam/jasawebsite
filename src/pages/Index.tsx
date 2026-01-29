@@ -3,6 +3,7 @@ import Scene from '@/components/three/Scene';
 import HeroOverlay from '@/components/HeroOverlay';
 import MeteorParticles from '@/components/MeteorParticles';
 import BackgroundMusic from '@/components/BackgroundMusic';
+import DancingCat from '@/components/three/DancingCat';
 import WhyNeedSection from '@/components/sections/WhyNeedSection';
 import WebsiteServiceSection from '@/components/sections/WebsiteServiceSection';
 import AppServiceSection from '@/components/sections/AppServiceSection';
@@ -33,6 +34,9 @@ const Index = () => {
     <main className="relative min-h-screen bg-background overflow-hidden">
       {/* Background Music Player */}
       <BackgroundMusic />
+      
+      {/* Dancing Cat Animation */}
+      <DancingCat />
       
       {/* Meteor shower background image with parallax */}
       <div 
