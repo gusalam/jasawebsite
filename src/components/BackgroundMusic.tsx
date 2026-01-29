@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import musicPlayerBg from '@/assets/music-player-bg.jpg';
 
 const BackgroundMusic = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -76,21 +77,48 @@ const BackgroundMusic = () => {
 
       {/* First-time prompt if autoplay was blocked */}
       {!hasInteracted && (
-        <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="glass-card max-w-sm text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-              <Volume2 className="w-8 h-8 text-primary" />
+        <div className="fixed inset-0 z-40 flex items-center justify-center p-4 overflow-hidden">
+          {/* Background Image with blur */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${musicPlayerBg})`,
+              filter: 'blur(8px)',
+              transform: 'scale(1.1)',
+            }}
+          />
+          
+          {/* Dark gradient overlay */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%)',
+            }}
+          />
+          
+          {/* Glassmorphism card */}
+          <div className="relative z-10 max-w-sm w-full text-center rounded-3xl p-8"
+            style={{
+              background: 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+            }}
+          >
+            <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/30">
+              <Volume2 className="w-10 h-10 text-white" />
             </div>
-            <h3 className="text-xl font-bold font-display text-foreground mb-2">
+            <h3 className="text-2xl font-bold font-display text-white mb-3 drop-shadow-lg">
               Putar Musik Latar?
             </h3>
-            <p className="text-muted-foreground text-sm mb-6">
+            <p className="text-white/80 text-sm mb-8 leading-relaxed">
               Website ini memiliki musik latar. Klik tombol di bawah untuk memulai.
             </p>
-            <div className="flex gap-3 justify-center">
+            <div className="flex gap-4 justify-center">
               <button
                 onClick={() => setHasInteracted(true)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="px-5 py-3 text-sm font-medium text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/10"
               >
                 Tanpa Musik
               </button>
@@ -98,7 +126,7 @@ const BackgroundMusic = () => {
                 onClick={() => {
                   toggleMusic();
                 }}
-                className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
+                className="px-8 py-3 bg-white/20 backdrop-blur-sm text-white rounded-full font-semibold text-sm hover:bg-white/30 transition-all border border-white/30 shadow-lg"
               >
                 Putar Musik
               </button>
